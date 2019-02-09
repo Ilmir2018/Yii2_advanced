@@ -19,7 +19,7 @@ return [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
+            'identityCookie' => ['name' => '_identity', 'httpOnly' => true, 'domain' => '.task.local'],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
@@ -33,6 +33,9 @@ return [
                     'levels' => ['error', 'warning'],
                 ],
             ],
+        ],
+        'errorHandler' => [
+            'errorAction' => 'site/error',
         ],
         'i18n' => [
             'translations' => [
@@ -49,17 +52,14 @@ return [
                 ]
             ]
         ],
-        'errorHandler' => [
-            'errorAction' => 'site/error',
-        ],
-
+        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => true,
+            'showScriptName' => false,
             'rules' => [
             ],
         ],
-
+        */
     ],
     'params' => $params,
 ];

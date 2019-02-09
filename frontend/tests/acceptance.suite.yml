@@ -1,0 +1,13 @@
+suite_namespace: frontend\tests\acceptance
+actor: AcceptanceTester
+modules:
+    enabled:
+#        - WebDriver:
+#            url: http://front.task.local/
+#            browser: chrome
+#            port: 9516
+        - PhpBrowser:
+#            url: http://front.task.local/
+             url: http://front.task.local/index.php?r=task%2Fone&id=1/
+        - Yii2:
+            part: init
